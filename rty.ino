@@ -1,0 +1,25 @@
+#define LED 12
+#define PIR 4
+#define IR 6
+void setup()
+{
+Serial.begin(115200);
+pinMode(LED,OUTPUT);
+pinMode(PIR,INPUT);
+pinMode(IR,INPUT);
+}
+void loop()
+{
+int l=digitalRead(PIR);
+int t= digitalRead(IR);
+if (l==1&&t==0)
+{
+digitalWrite(LED,HIGH);
+}
+else
+
+{
+digitalWrite(LED,LOW);
+}
+delay(1000);
+}
